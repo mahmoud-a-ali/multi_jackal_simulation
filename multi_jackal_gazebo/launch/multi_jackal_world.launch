@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- <arg name="ns"    default="J0"/> -->
+  <arg name="use_sim_time" default="true" />
+  <arg name="gui" default="true" />
+  <arg name="headless" default="false" />
+
+  <!-- <arg name="config" default="base" />  -->
+  <!-- <arg name="world_name" default="$(find gazebo_ros)/worlds/empty_world.world" /> -->
+
+  <arg name="config" default="vlp_laser" /> 
+  <arg name="world_name" default="$(find multi_jackal_gazebo)/worlds/flexible_world_2.world" />
+
+
+  <!-- Launch Gazebo with the specified world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="0" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="use_sim_time" value="$(arg use_sim_time)" />
+    <arg name="headless" value="$(arg headless)" />
+    <arg name="world_name" value="$(arg world_name)" />
+  </include>
+
+
+  <!-- Spawn Jackal -->
+  <include file="$(find multi_jackal_gazebo)/launch/spawn_one_jackal.launch">
+    <arg name="ns" value="J0" />
+    <arg name="x" value="3" />
+    <arg name="y" value="5" />
+    <arg name="z" value="1.0" />
+    <arg name="yaw" value="0" />
+    <arg name="config" value="$(arg config)" />
+  </include>
+
+
+  <include file="$(find multi_jackal_gazebo)/launch/spawn_one_jackal.launch">
+    <arg name="ns" value="J1" />
+    <arg name="x" value="7" />
+    <arg name="y" value="1" />
+    <arg name="z" value="1.0" />
+    <arg name="yaw" value="0" />
+    <arg name="config" value="$(arg config)" />
+  </include>
+
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find multi_jackal_viz)/rviz/vsgp_nav.rviz" />
+
+
+</launch>
+
+
