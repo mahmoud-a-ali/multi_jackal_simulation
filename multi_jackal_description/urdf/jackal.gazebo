@@ -12,7 +12,7 @@
  <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
       <robotNamespace>/$(arg namespace)</robotNamespace>
       <alwaysOn>true</alwaysOn>
-      <updateRate>60.0</updateRate>
+      <updateRate>200.0</updateRate>
       <bodyName>base_link</bodyName>
       <frameId>$(arg namespace)/base_link</frameId>
       <topicName>ground_truth/state</topicName>
