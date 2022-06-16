@@ -5,6 +5,7 @@
   <arg name="enable_ekf" default="$(optenv ENABLE_EKF false)"/>
   <arg name="ns" default=""/>
 
+ <!-- load param  -->
   <rosparam command="load" file="$(find multi_jackal_control)/config/control.yaml"  ns="$(arg ns)"/>
 
 
