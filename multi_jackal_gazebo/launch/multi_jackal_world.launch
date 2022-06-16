@@ -6,6 +6,7 @@
   <arg name="gui" default="true" />
   <arg name="headless" default="false" />
   <arg name="two_robots" default="true" />
+  <arg name="joy" default="true" />
 
 
 
@@ -63,6 +64,15 @@
       <arg name="z" value="1.0" />
       <arg name="config" value="$(arg config)" />
     </include>
+  </group>
+
+
+
+    <!-- rviz -->
+    <group if="$(arg joy)"> 
+      <include file="$(find multi_jackal_control)/launch/teleop_one_robot.launch">
+        <arg name="ns" value="J0" />
+      </include>
   </group>
 
 
