@@ -5,7 +5,7 @@
   <arg name="use_sim_time" default="true" />
   <arg name="gui" default="true" />
   <arg name="headless" default="false" />
-  <arg name="two_robots" default="true" />
+  <arg name="two_robots" default="false" />
   <arg name="joy" default="true" />
 
 
@@ -18,7 +18,7 @@
   <!-- <arg name="world_name" default="$(find multi_jackal_gazebo)/worlds/flexible_world_2.world" /> -->
   <!-- <arg name="world_name" default="$(find multi_jackal_gazebo)/worlds/structured_indoor_2.world" /> -->
   <!-- <arg name="world_name" default="$(find multi_jackal_gazebo)/worlds/patrol_scenario_3.world" /> -->
-  <arg name="world_name" default="$(find multi_jackal_gazebo)/worlds/multi_robot_world_1.world" />
+  <arg name="world_name" default="$(find multi_jackal_gazebo)/worlds/multi_robot_world_2.world" />
 
 
 
